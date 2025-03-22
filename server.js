@@ -1,11 +1,13 @@
-const config = require('./src/constants').config
-const { app, connectDB } = require('./src/app')
-const port = config.port;
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Connect to the database
-connectDB();
+// Test API endpoint
+app.get("/api/test", (req, res) => {
+    res.json({ message: "Hello, your API is working!" });
+});
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });

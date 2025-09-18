@@ -1,6 +1,7 @@
 const Card = require('./card_model');
 
 const test = async (req, res) => {
+   console.log('control in test')
    res.send('App is up and running...');
 }
 
